@@ -1,0 +1,4 @@
+android/** linguist-vendored
+ios/** linguist-vendored
+*.gradle linguist-vendored
+*.sh linguist-vendored
