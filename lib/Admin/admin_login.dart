@@ -8,6 +8,13 @@ class AdminLogin extends StatefulWidget {
 }
 
 class _AdminLoginState extends State<AdminLogin> {
+
+  final GlobalKey <FormState> _formkey = GlobalKey <FormState>();
+  TextEditingController usernamecontroller = TextEditingController();
+
+  TextEditingController userpasswordcontroller = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +39,7 @@ class _AdminLoginState extends State<AdminLogin> {
           Container(
             margin: EdgeInsets.only(top: 60, right: 30, left: 30),
             child: Form(
+              key: _formkey,
               child: Column(
                 children: [
                   Text("Let's start with \n Admin",
@@ -40,7 +48,9 @@ class _AdminLoginState extends State<AdminLogin> {
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
                   ),),
+
 SizedBox(height: 30,),
+
                   Material(
                     elevation: 5,
                     borderRadius: BorderRadius.circular(30),
@@ -66,6 +76,7 @@ SizedBox(height: 30,),
 
                             child: Center(
                               child: TextFormField(
+                                controller: usernamecontroller,
                                 validator: (value){
                                   if(value == null || value.isEmpty){
                                     return "Please Enter User name";
@@ -97,6 +108,7 @@ SizedBox(height: 20,),
 
                             child: Center(
                               child: TextFormField(
+                                controller: usernamecontroller,
                                 validator: (value){
                                   if(value == null || value.isEmpty){
                                     return "Please Enter Password";
@@ -116,26 +128,31 @@ SizedBox(height: 20,),
 
                           SizedBox(height: 40,),
 
-                          Container(
-                            padding: EdgeInsets.symmetric(vertical: 12),
-                            margin: EdgeInsets.symmetric(horizontal: 20),
-                            width: MediaQuery.of(context).size.width,
-                            decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
+                          GestureDetector(
+                            onTap: (){
 
-                            child: Center(
-                              child: Text(
-                                "Login",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.bold,
-                                )
+                            },
+                            child: Container(
+                              padding: EdgeInsets.symmetric(vertical: 12),
+                              margin: EdgeInsets.symmetric(horizontal: 20),
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                color: Colors.black,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            
+                              child: Center(
+                                child: Text(
+                                  "Login",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                  )
+                                  ),
                                 ),
                               ),
-                            ),
+                          ),
                         ],
                       ),
                     ),
