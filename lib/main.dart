@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:wallpaper_app/Admin/admin_login.dart';
-import 'package:wallpaper_app/pages/bottomnav.dart';
+import 'package:wallpaper_app/Admin/add_wallpaper.dart';
+
 
 
 
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.black,
       ),
-      home:AdminLogin(),
+      home:AddWallpaper(),
     );
   }
 }
