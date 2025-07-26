@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class AddWallpaper extends StatefulWidget {
   const AddWallpaper({super.key});
@@ -10,6 +13,19 @@ class AddWallpaper extends StatefulWidget {
 class _AddWallpaperState extends State<AddWallpaper> {
   final List<String> catagoryitem = ['wildlife', 'Food', 'City', 'Nature'];
   String? value;
+
+  //function for the image picker
+  final ImagePicker _picker = ImagePicker();
+  File? selectedImage;
+
+  Future getImage()async{
+    var image = await _picker.pickImage(source: ImageSource.gallery);
+    selectedImage = File(image!.path);
+    setState(() {
+      
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,21 +50,50 @@ class _AddWallpaperState extends State<AddWallpaper> {
         child: Column(
           children: [
             SizedBox(height: 20),
-            Center(
-              child: Container(
-                height: 300,
-                width: 250,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black, width: 1.5),
+            selectedImage == null? GestureDetector(
+              onTap: (){
+                getImage();
+              },
+              child: Center(
+                child: Material(
+                  elevation: 5,
                   borderRadius: BorderRadius.circular(20),
-                ),
-                child: Icon(
-                  Icons.camera_alt_outlined,
-                  color: Colors.black,
-                  size: 50,
+                  child: Container(
+                    height: 300,
+                    width: 250,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black, width: 1.5),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Icon(
+                      Icons.camera_alt_outlined,
+                      color: Colors.black,
+                      size: 50,
+                    ),
+                  ),
                 ),
               ),
-            ),
+            ):Center(
+                child: Material(
+                  elevation: 5,
+                  borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                    height: 300,
+                    width: 250,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black, width: 1.5),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.file(
+                        selectedImage!,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
 
             SizedBox(height: 40),
 
