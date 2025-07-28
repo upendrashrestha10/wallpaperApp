@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:wallpaper_app/models/photo_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:wallpaper_app/pages/catblock.dart';
-import 'package:wallpaper_app/pages/fullscree.dart';
+import 'package:wallpaper_app/pages/fullscreen.dart';
 
 class Search extends StatefulWidget {
   const Search({super.key});
