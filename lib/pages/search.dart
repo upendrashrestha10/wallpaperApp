@@ -161,7 +161,7 @@ class _SearchState extends State<Search> {
                   onTap:(){
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context)=>Fullscreen(
-                        imgUrl: photos[index].src?.portrait ?? '',))
+                        imagepath: photos[index].src?.portrait ?? '',))
                     );
                   } ,
                   child: Container(
