@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wallpaper_app/pages/all_wallpaper.dart';
 
 class Categories extends StatefulWidget {
   const Categories({super.key});
@@ -16,166 +17,225 @@ class _CategoriesState extends State<Categories> {
         child: Column(
           children: [
             Center(
-              child: Text("Categories",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-              ),),
-            ),
-            SizedBox(height: 20,),
-            Container(
-              margin: EdgeInsets.only(left: 20, right: 20),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-              ),
-            child: Stack(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset("assets/images/wild.jpg", 
-                  width: MediaQuery.of(context).size.width,
-                  height: 200,
-                  fit: BoxFit.cover,),
+              child: Text(
+                "Categories",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
                 ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 200,
+              ),
+            ),
+
+            SizedBox(height: 20),
+
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AllWallpaper(catagory: "WildLife"),
+                  ),
+                );
+              },
+              child: Container(
+                margin: EdgeInsets.only(left: 20, right: 20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Colors.black54,
                 ),
-                child: Center(
-                  child: Text("WildLife",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),),
+                child: Stack(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(
+                        "assets/images/wild.jpg",
+                        width: MediaQuery.of(context).size.width,
+                        height: 200,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.black54,
+                      ),
+                      child: Center(
+                        child: Text(
+                          "WildLife",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              )
-              ],
-            ),
-            ),
-          SizedBox(height: 20,),
-          Container(
-            margin: EdgeInsets.only(left: 20, right: 20),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20)
-            ),
-      
-          child: Stack(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.asset("assets/images/food.jpeg",
-                height: 200,
-                width: MediaQuery.of(context).size.width,
-                fit: BoxFit.cover,),
               ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 200,
+            ),
+
+            SizedBox(height: 20),
+
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AllWallpaper(catagory: "food"),
+                  ),
+                );
+              },
+              child: Container(
+                margin: EdgeInsets.only(left: 20, right: 20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Colors.black54,
-                ),
-      
-                child: Center(
-                  child: Text("Food",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),),
-                ),
-              )
-            ],
-          ),
-          ),
-      
-          SizedBox(height: 20,),
-      
-          Container(
-            margin: EdgeInsets.only(left: 20, right: 20),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-            ),
-      
-            child: Stack(
-              children: [
-                ClipRRect(
-                   borderRadius: BorderRadius.circular(20),
-                  child: Image.asset("assets/images/nature.jpg",
-                  width: MediaQuery.of(context).size.width,
-                  height: 200,
-                  fit: BoxFit.cover,
-                  ),
                 ),
 
-                Container(
-                  height: 200,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.black54,
-                  ),
-                  
-                  child: Center(
-                    child: Text("Nature",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),),
-                  ),
-                )
-              ],
-            ),
-          ),
-          
-          SizedBox(height: 20,),
+                child: Stack(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(
+                        "assets/images/food.jpeg",
+                        height: 200,
+                        width: MediaQuery.of(context).size.width,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.black54,
+                      ),
 
-          Container(
-            margin: EdgeInsets.only(left: 20, right: 20),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20)
+                      child: Center(
+                        child: Text(
+                          "Food",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
 
-            child: Stack(
-              children: [
-                ClipRRect(
+            SizedBox(height: 20),
+
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AllWallpaper(catagory: "nature"),
+                  ),
+                );
+              },
+              child: Container(
+                margin: EdgeInsets.only(left: 20, right: 20),
+                decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  child: Image.asset("assets/images/city.jpg",
-                  height: 200,
-                  width: MediaQuery.of(context).size.width,
-                  fit: BoxFit.cover,
-                  ),
                 ),
 
-                Container(
-                  height: 200,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.black54,
-                  ),
+                child: Stack(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(
+                        "assets/images/nature.jpg",
+                        width: MediaQuery.of(context).size.width,
+                        height: 200,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
 
-                  child: Center(
-                    child: Text("City",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),),
-                  ),
-                )
-              ], 
+                    Container(
+                      height: 200,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.black54,
+                      ),
+
+                      child: Center(
+                        child: Text(
+                          "Nature",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ),
 
-          SizedBox(height: 20,),
+            SizedBox(height: 20),
 
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AllWallpaper(catagory: "city"),
+                  ),
+                );
+              },
+              child: Container(
+                margin: EdgeInsets.only(left: 20, right: 20),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+
+                child: Stack(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(
+                        "assets/images/city.jpg",
+                        height: 200,
+                        width: MediaQuery.of(context).size.width,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+
+                    Container(
+                      height: 200,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.black54,
+                      ),
+
+                      child: Center(
+                        child: Text(
+                          "City",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            SizedBox(height: 20),
           ],
         ),
       ),

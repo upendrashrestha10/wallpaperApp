@@ -132,20 +132,7 @@ class _SearchState extends State<Search> {
               ),
             ),
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10.0),
-              child: SizedBox(
-                height: 50,
-                width: MediaQuery.of(context).size.width,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 30,
-                  itemBuilder: (context, index) {
-                    return Catblock();
-                  },
-                ),
-              ),
-            ),
+
             Container(
               margin: EdgeInsets.symmetric(horizontal: 10),
               height: MediaQuery.of(context).size.height * 0.9,
